@@ -1,0 +1,44 @@
+version: '3.7'
+services:
+  server:
+    container_name: ${APP_NAME}-server
+    build:
+      context: ./server
+      dockerfile: ../docker/server/Dockerfile
+    restart: always
+    volumes:
+      - ./server:/home/node/app/
+    env_file:
+      - .env
+
+  client:
+    container_name: ${APP_NAME}-client
+    build:
+      context: ./client
+      dockerfile: ../docker/client/Dockerfile
+    restart: always
+    volumes:
+      - ./client:/home/node/app/
+    env_file:
+      - .env
+
+  nginx:
+    build:
+      context: ./docker/nginx/
+      dockerfile: Dockerfile
+    container_name: ${APP_NAME}-nginx
+    env_file:
+      - .env
+    volumes:
+      - ./docker/logs/nginx/:/var/log/nginx
+      - ./docker/nginx/${DOMAIN}.crt:/etc/nginx/${DOMAIN}.crt
+      - ./docker/nginx/${DOMAIN}.key:/etc/nginx/${DOMAIN}.key
+    depends_on:
+      - client
+      - server
+    links:
+      - client
+      - server
+    ports:
+      - 80:80
+      - 443:443

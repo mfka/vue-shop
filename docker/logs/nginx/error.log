@@ -1,0 +1,8 @@
+2019/08/04 13:28:44 [emerg] 1#1: invalid port in upstream "vue-shop-server:${SERVER_PORT}" in /etc/nginx/conf.d/vhost.conf:2
+2019/08/04 13:34:40 [emerg] 1#1: host not found in upstream "vue-shop-server:3000" in /etc/nginx/conf.d/vhost.conf:2
+2019/08/04 13:39:28 [emerg] 1#1: host not found in upstream "vue-shop-server:3000" in /etc/nginx/conf.d/vhost.conf:2
+2019/08/04 13:40:38 [emerg] 1#1: host not found in upstream "vue-shop-server:3000" in /etc/nginx/conf.d/vhost.conf:2
+2019/08/04 13:43:42 [emerg] 1#1: host not found in upstream "vue-shop-server:3000" in /etc/nginx/conf.d/vhost.conf:2
+2019/08/04 13:47:01 [emerg] 1#1: host not found in upstream "vue-shop-server:3000" in /etc/nginx/conf.d/vhost.conf:2
+2019/08/04 13:50:04 [emerg] 1#1: a duplicate default server for 0.0.0.0:443 in /etc/nginx/conf.d/vhost.conf:50
+2019/08/04 13:55:34 [emerg] 1#1: directive "server_name" is not terminated by ";" in /etc/nginx/conf.d/vhost.conf:51
